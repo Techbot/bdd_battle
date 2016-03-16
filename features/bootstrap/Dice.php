@@ -6,9 +6,13 @@
  * Time: 21:16
  */
 
-
-
 class Dice
 {
+    private $diceValue;
 
+    public function setDiceValue($diceValue)
+    {
+        $this->diceValue = $diceValue;
+
+    }
 }
