@@ -16,7 +16,7 @@ class Npc
     {
         $this->dice = $dice;
         $this->health = 100;
-        $this->strength = 15;
+        $this->strength = 10;
     }
 
     public function addToStrength($dice)
@@ -29,12 +29,24 @@ class Npc
         $this->NpcAttack = $NpcAttack;
     }
 
+    public function getAttack()
+    {
+       return $this->strength + $this->dice->getDiceValue();
+    }
+
     public function getHealth()
     {
         return $this->health;
     }
 
+    public function setHealth($health)
+    {
+        $this->health = $health;
+    }
 
-
+    public function setStrength($strength)
+    {
+        $this->strength = $strength;
+    }
 
 }

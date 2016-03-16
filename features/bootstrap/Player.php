@@ -4,16 +4,16 @@ class Player
 {
     private $strength;
     private $health;
-    private $dice1;
+    private $dice;
     private $npc;
     private $npcAttack;
 
-    public function __construct(Dice $dice1, $npc)
+    public function __construct(Dice $dice, $npc)
     {
         $this->npc      = $npc;
-        $this->dice1    = $dice1;
+        $this->dice    = $dice;
         $this->health   = 100;
-        $this->strenght = 15;
+        $this->strenght = 10;
 
     }
 
@@ -31,7 +31,14 @@ class Player
     {
         return $this->health;
     }
+    public function setHealth($health)
+    {
+        $this->health = $health;
+    }
 
-
+    public function getAttack()
+    {
+        return $this->strength + $this->dice->getDiceValue();
+    }
 
 }

@@ -10,9 +10,16 @@ class Dice
 {
     private $diceValue;
 
-    public function setDiceValue($diceValue)
-    {
-        $this->diceValue = $diceValue;
+    public function __construct(){
+
+        $this->diceValue = rand(1,6);
 
     }
+
+    public function getDiceValue()
+    {
+        return $this->diceValue ;
+
+    }
+
 }
